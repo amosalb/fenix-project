@@ -1,0 +1,1 @@
+INSERT INTO customer (id, name, public_id) VALUES (1, 'John Doe', 'public-id-1');
