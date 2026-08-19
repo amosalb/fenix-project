@@ -3,7 +3,7 @@ package dev.amosalb.fenix.customer;
 import jakarta.persistence.*;
 
 @Entity
-    @Table(name = "customer")
+@Table(name = "customer")
 public class Customer {
 
     @Id
@@ -17,8 +17,6 @@ public class Customer {
 
     @Enumerated(EnumType.ORDINAL)
     private PublicIdType publicIdType;
-
-    private String email;
 
     public Long getId() {
         return id;
@@ -52,11 +50,4 @@ public class Customer {
         this.publicIdType = publicIdType;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }
