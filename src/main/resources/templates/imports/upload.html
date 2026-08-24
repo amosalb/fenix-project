@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Importar Vendas · Fênix</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<nav>
+    <a class="nav-brand" href="/">Fênix</a>
+    <a href="/app/pedidos">Pedidos</a>
+    <a href="/app/clientes">Clientes</a>
+    <a href="/app/importar">Importar</a>
+</nav>
+
+<main>
+    <h1>Importar Vendas</h1>
+
+    {#if message}
+    <div class="card" style="max-width: 480px; border-color: var(--color-danger); margin-bottom: 1.5rem;">
+        <strong style="color: var(--color-danger);">Falha na importação</strong>
+        <p class="mt-1">{message}</p>
+    </div>
+    {/if}
+
+    <div class="card" style="max-width: 480px;">
+        <form method="POST" enctype="multipart/form-data" action="/app/importar">
+            <div class="form-group">
+                <label for="file">Arquivo CSV (exportação Nuvemshop)</label>
+                <input id="file" type="file" name="file" accept=".csv" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Importar</button>
+        </form>
+    </div>
+</main>
+</body>
+</html>

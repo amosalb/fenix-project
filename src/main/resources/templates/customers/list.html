@@ -1,31 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes · Fênix</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+<nav>
+    <a class="nav-brand" href="/">Fênix</a>
+    <a href="/app/pedidos">Pedidos</a>
+    <a href="/app/clientes">Clientes</a>
+    <a href="/app/importar">Importar</a>
+</nav>
 
-<table>
+<main>
+    <h1>Clientes</h1>
 
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Nome</th>
-    </tr>
-    </thead>
-
-    <tbody>
-
-    {#for customer in customers}
-    <tr>
-        <td>{customer.id}</td>
-        <td>{customer.name}</td>
-    </tr>
-    {/for}
-
-    </tbody>
-
-</table>
+    <div class="card">
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nome</th>
+                    <th>CPF / CNPJ</th>
+                    <th>E-mail</th>
+                    <th>Telefone</th>
+                </tr>
+                </thead>
+                <tbody>
+                {#for customer in customers}
+                <tr>
+                    <td class="text-muted">{customer.id}</td>
+                    <td>{customer.name ?: '-'}</td>
+                    <td>{customer.publicId ?: '-'}</td>
+                    <td>{customer.email ?: '-'}</td>
+                    <td>{customer.phone ?: '-'}</td>
+                </tr>
+                {/for}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
 </body>
 </html>

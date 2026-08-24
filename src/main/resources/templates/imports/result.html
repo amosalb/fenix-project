@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado da Importação · Fênix</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<nav>
+    <a class="nav-brand" href="/">Fênix</a>
+    <a href="/app/pedidos">Pedidos</a>
+    <a href="/app/clientes">Clientes</a>
+    <a href="/app/importar">Importar</a>
+</nav>
+
+<main>
+    <h1>Resultado da Importação</h1>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <span class="stat-value">{result.ordersCreated}</span>
+            <span class="stat-label">Pedidos criados</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-value">{result.customersCreated}</span>
+            <span class="stat-label">Clientes criados</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-value">{result.productsCreated}</span>
+            <span class="stat-label">Produtos criados</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-value">{result.itemsCreated}</span>
+            <span class="stat-label">Itens criados</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-value">{result.ordersSkipped}</span>
+            <span class="stat-label">Linhas ignoradas</span>
+        </div>
+    </div>
+
+    <div class="page-actions">
+        <a href="/app/importar" class="btn btn-secondary">Nova importação</a>
+        <a href="/app/pedidos" class="btn btn-primary">Ver pedidos</a>
+    </div>
+</main>
+</body>
+</html>

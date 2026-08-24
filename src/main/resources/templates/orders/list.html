@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos · Fênix</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<nav>
+    <a class="nav-brand" href="/">Fênix</a>
+    <a href="/app/pedidos">Pedidos</a>
+    <a href="/app/clientes">Clientes</a>
+    <a href="/app/importar">Importar</a>
+</nav>
+
+<main>
+    <div class="page-actions">
+        <h1 style="margin-bottom:0">Pedidos</h1>
+        <div class="spacer"></div>
+        <a href="/app/importar" class="btn btn-primary">Importar CSV</a>
+    </div>
+
+    <div class="card">
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nº Pedido</th>
+                    <th>Status</th>
+                    <th>Data</th>
+                    <th>Total</th>
+                </tr>
+                </thead>
+                <tbody>
+                {#for order in orders}
+                <tr>
+                    <td class="text-muted">{order.id}</td>
+                    <td>{order.externalId}</td>
+                    <td>
+                        {#if order.status}
+                        <span class="badge badge-open">{order.status}</span>
+                        {#else}-{/if}
+                    </td>
+                    <td class="text-muted">{order.orderDateFormatted}</td>
+                    <td><strong>{order.totalBrl}</strong></td>
+                </tr>
+                {/for}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+</body>
+</html>

@@ -1,8 +1,14 @@
- package dev.amosalb.fenix.customer;
+package dev.amosalb.fenix.customer;
 
- import io.quarkus.hibernate.orm.panache.PanacheRepository;
- import jakarta.enterprise.context.RequestScoped;
+import io.quarkus.hibernate.orm.panache.PanacheRepository;
+import jakarta.enterprise.context.RequestScoped;
 
- @RequestScoped
- public class CustomerPanacheRepository implements PanacheRepository<Customer> {
- }
+import java.util.Optional;
+
+@RequestScoped
+public class CustomerPanacheRepository implements PanacheRepository<Customer> {
+
+    public Optional<Customer> findByPublicId(String publicId) {
+        return find("publicId", publicId).firstResultOptional();
+    }
+}
