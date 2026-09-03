@@ -155,6 +155,7 @@ public class CsvImportService {
     }
 
     private String digitsOnly(String value) {
+        // TODO CNPJ now allows letters, so we should probably not strip them out. But for now, let's keep it simple and just remove non-digits.
         return value == null ? null : value.replaceAll("\\D", "");
     }
 
